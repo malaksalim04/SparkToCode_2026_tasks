@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/malak/RiderProjects/SparkToCode_2026_tasks/SparkToCode_2026_tasks/SparkToCode_2026_tasks.csproj": {}
+    "/Users/malak/RiderProjects/SparkToCode_2026_tasks/Task1/Task1.csproj": {}
   },
   "projects": {
-    "/Users/malak/RiderProjects/SparkToCode_2026_tasks/SparkToCode_2026_tasks/SparkToCode_2026_tasks.csproj": {
+    "/Users/malak/RiderProjects/SparkToCode_2026_tasks/Task1/Task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/malak/RiderProjects/SparkToCode_2026_tasks/SparkToCode_2026_tasks/SparkToCode_2026_tasks.csproj",
-        "projectName": "SparkToCode_2026_tasks",
-        "projectPath": "/Users/malak/RiderProjects/SparkToCode_2026_tasks/SparkToCode_2026_tasks/SparkToCode_2026_tasks.csproj",
+        "projectUniqueName": "/Users/malak/RiderProjects/SparkToCode_2026_tasks/Task1/Task1.csproj",
+        "projectName": "Task1",
+        "projectPath": "/Users/malak/RiderProjects/SparkToCode_2026_tasks/Task1/Task1.csproj",
         "packagesPath": "/Users/malak/.nuget/packages/",
-        "outputPath": "/Users/malak/RiderProjects/SparkToCode_2026_tasks/SparkToCode_2026_tasks/obj/",
+        "outputPath": "/Users/malak/RiderProjects/SparkToCode_2026_tasks/Task1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/malak/.nuget/NuGet/NuGet.Config"

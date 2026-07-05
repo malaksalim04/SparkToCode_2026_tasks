@@ -1,0 +1,284 @@
+﻿namespace Task1;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // task1 personal info card 
+        string name = "Sara";
+        int age = 21;
+        double height = 1.65;
+        bool student = true;
+        
+        Console.Write("Name :" + name+", Age :"+age+", Height :"+ height+", Student :" +student  );
+
+        
+        // task 2 rectangle calculator 
+        Console.WriteLine("enter the lenght : ");
+        float length = float.Parse(Console.ReadLine());
+        
+        Console.WriteLine("enter the width : ");
+        float width = float.Parse(Console.ReadLine());
+
+        float area = length * width;
+        float perimeter = 2 * (length + width);
+        
+        Console.WriteLine("the area is : " +area);
+        Console.WriteLine("the perimeter is : " +perimeter);
+        
+        //task3 even or odd number 
+        Console.Write("please Enter a whole number: ");
+        int number = int.Parse(Console.ReadLine());
+
+        if (number % 2 == 0)
+        {
+            Console.Write("the number is even ");
+        }
+        else
+        {
+            Console.Write("the number is odd ");
+        }
+        
+        // task4 voting eligibility
+        Console.Write("enter your age : ");
+        int Age = int.Parse(Console.ReadLine());
+        
+        Console.Write("do you have a valid ID ? : ");
+        bool validID = bool.Parse(Console.ReadLine());
+
+        if (validID == "true")
+        {
+            Console.Write("you have a valid ID ");
+            
+        }
+        else
+        {
+            Console.Write("your ID is not valid ");
+        }
+
+        if (Age >= 18)
+        {
+            Console.Write("you are eligible to vote ");
+        }
+        else
+        {
+            Console.Write("you are not eligible to vote");
+            
+        }
+        
+        //task5 grade letter lookup 
+        Console.WriteLine("enter your grade: ");
+        string grade = Console.ReadLine();
+        if (grade == "A")
+        {
+            Console.Write("Excellent ");
+        }
+        else if (grade == "B")
+        {
+            Console.Write("Very Good ");
+        }
+        else if (grade == "C")
+        {
+            Console.Write("Good");
+        }
+        else if (grade == "D")
+        {
+            Console.Write("Pass");
+        }
+        else if (grade == "F")
+        {
+            Console.Write("Fail");
+        }
+        else
+        {
+            Console.Write("Invalid grade");
+        }
+        
+        // task6 temperature converter 
+        Console.WriteLine("enter the  temperature in celsius : ");
+        float celsius = float.Parse(Console.ReadLine());
+
+        float fahrenheit = (celsius * 9 / 5) + 32;
+        Console.WriteLine("the temperature is " +fahrenheit);
+
+        if (celsius < 10)
+        {
+            Console.WriteLine("weather is cold ");
+        }
+        else if (celsius <= 30)
+        {
+            Console.WriteLine("weather is mild  ");
+        }
+        else
+        {
+            Console.WriteLine("weather is hot ");
+        }
+        //task7 movie ticket pricing 
+        Console.Write("enter your age : ");
+        int userage = int.Parse(Console.ReadLine());
+
+        if (userage >= 0 && userage <= 12)
+        {
+            Console.WriteLine("child price: 2.000 OMR");
+        }
+        else if (userage >= 13 && userage <=59)
+        {
+            Console.WriteLine("adults price: 5.000 OMR");
+        }
+        else
+        {
+            Console.WriteLine("seniors  price: 3.000 OMR");
+        }
+        //task8 restaurant bill with membership discount 
+        
+        Console.Write("enter the total bill amount");
+        double billAmount = double.Parse(Console.ReadLine());
+        
+        Console.Write("are you a loyalty member?(yea/no): ");
+        string answer = Console.ReadLine();
+
+        bool ismember;
+        if (answer == "yes")
+        {
+            ismember = true;
+        }
+        else
+        {
+            ismember = false;
+        }
+
+        if (billAmount > 20 && ismember)
+        {
+            double discount = billAmount * 0.15;
+            double total = billAmount - discount;
+            
+            Console.WriteLine("discount is 15% your final bill is "+total+"OMR");
+        }
+        else
+        {
+            Console.WriteLine("no discount applied  your bill is "+ billAmount+"OMR");
+        }
+        
+        // task9 day name finder 
+        Console.Write("enter a number (1-7) : ");
+        int day = int.Parse(Console.ReadLine());
+
+        switch (day)
+        { 
+            case 1 :
+                Console.WriteLine("Sunday ");
+                break;
+            case 2 :
+                Console.WriteLine("Monday ");
+                break;
+            case 3 :
+                Console.WriteLine("Tuesday ");
+                break;
+            case 4 :
+                Console.WriteLine("wednesday ");
+                break;
+            case 5 :
+                Console.WriteLine("Thursday ");
+                break;
+            case 6 :
+                Console.WriteLine("Friday ");
+                break;
+            case 7 :
+                Console.WriteLine("Saturday ");
+                break;
+            default:
+                Console.WriteLine("Invalid day number");
+                break;
+            
+        } 
+        
+        //task10 mini calculator
+        Console.Write("enter the first number: ");
+        double number1 = double.Parse(Console.ReadLine());
+          
+        Console.Write("enter the second number: ");
+        double number2 = double.Parse(Console.ReadLine());
+          
+        Console.Write("enter an operator:  ");
+        string op = Console.ReadLine();
+
+        switch (op)
+        {
+            case "+":
+                Console.WriteLine("result:" +(number1 + number2));
+                break;
+            case "-" :
+                Console.WriteLine("result:" +(number1 - number2));
+                break;
+            case "*" :
+                Console.WriteLine("result:" +(number1 * number2));
+                break;
+            case "/" :
+                if (number2 != 0)
+                {
+                    Console.WriteLine("result:" +(number1 / number2));
+                }
+                else
+                {
+                    Console.WriteLine("cannot divide by zero");
+                }
+                break;
+            case "%" :
+                if (number2 != 0)
+                {
+                    Console.WriteLine("result:" +(number1 % number2));
+                }
+                else
+                {
+                    Console.WriteLine("cannot divide by zero");
+                }
+                break;
+            default:
+                Console.WriteLine("invalid operator ");
+                break;
+        }
+        // task11 loan eligibility system 
+        Console.Write("enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+          
+        Console.Write("enter your monthly income : ");
+        double income = double.Parse(Console.ReadLine());
+          
+        Console.Write("do you have an existing loan  : ");
+        string answer  =Console.ReadLine();
+
+        bool hasLoan;
+          
+        if (answer == "yes")
+        {
+            hasLoan = true;
+        }
+        else
+        {
+            hasLoan = false;
+        }
+
+        if (age >= 21 && age <= 60 && income >= 400 && !hasLoan)
+        {
+            Console.WriteLine("you are eligible for the personal loan ");
+        }
+        else
+        {
+            Console.WriteLine("you are not eligible for the personal loan ");
+        }
+
+        if (age < 21 || age > 60)
+        {
+            Console.WriteLine(" age out of range");
+        }
+        else if (income < 400)
+        {
+            Console.WriteLine("income too low ");
+        }
+        else if (hasLoan)
+        {
+            Console.WriteLine("you have an existing  loan ");
+
+        }
+    }
+}
