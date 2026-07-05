@@ -129,5 +129,34 @@ class Program
         {
             Console.WriteLine("seniors  price: 3.000 OMR");
         }
+        //task8 restaurant bill with membership discount 
+        
+        Console.Write("enter the total bill amount");
+        double billAmount = double.Parse(Console.ReadLine());
+        
+        Console.Write("are you a loyalty member?(yea/no): ");
+        string answer = Console.ReadLine();
+
+        bool ismember;
+        if (answer == "yes")
+        {
+            ismember = true;
+        }
+        else
+        {
+            ismember = false;
+        }
+
+        if (billAmount > 20 && ismember)
+        {
+            double discount = billAmount * 0.15;
+            double total = billAmount - discount;
+            
+            Console.WriteLine("discount is 15% your final bill is "+total+"OMR");
+        }
+        else
+        {
+            Console.WriteLine("no discount applied  your bill is "+ billAmount+"OMR");
+        }
     }
 }
