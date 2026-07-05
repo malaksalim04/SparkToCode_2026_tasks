@@ -38,5 +38,21 @@ class Program
         {
             Console.WriteLine(number +"x"+i+"="+(number*i));
         }
+        //task4 password retry
+
+        string password = "spark2026";
+        string input = "";
+        while (input != password)
+        {
+            Console.Write("enter the password : ");
+            input = Console.ReadLine();
+
+            if (input != password)
+            {
+                Console.WriteLine("incorrect password try again ");
+            }
+        }
+        Console.WriteLine("access granted ");
+
     }
 }
