@@ -113,5 +113,21 @@ class Program
         {
             Console.WriteLine("weather is hot ");
         }
+        //task7 movie ticket pricing 
+        Console.Write("enter your age : ");
+        int userage = int.Parse(Console.ReadLine());
+
+        if (userage >= 0 && userage <= 12)
+        {
+            Console.WriteLine("child price: 2.000 OMR");
+        }
+        else if (userage >= 13 && userage <=59)
+        {
+            Console.WriteLine("adults price: 5.000 OMR");
+        }
+        else
+        {
+            Console.WriteLine("seniors  price: 3.000 OMR");
+        }
     }
 }
