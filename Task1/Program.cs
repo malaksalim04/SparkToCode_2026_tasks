@@ -25,5 +25,18 @@ class Program
         
         Console.WriteLine("the area is : " +area);
         Console.WriteLine("the perimeter is : " +perimeter);
+        
+        //task3 even or odd number 
+        Console.Write("please Enter a whole number: ");
+        int number = int.Parse(Console.ReadLine());
+
+        if (number % 2 == 0)
+        {
+            Console.Write("the number is even ");
+        }
+        else
+        {
+            Console.Write("the number is odd ");
+        }
     }
 }
