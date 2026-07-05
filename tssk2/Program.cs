@@ -81,6 +81,27 @@ class Program
         }
         while (guess != secretnumber);
         Console.WriteLine("it took you " + attempts +"attempts");
+// task6 safe division calculator 
 
+        try
+        {
+            Console.Write("enter the first number: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.Write("enter the second number: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            int result = num1 / num2;
+            Console.WriteLine("result : " + result);
+
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("you cannot divide by zero");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("enter a valid number ");
+        }
     }
 }
