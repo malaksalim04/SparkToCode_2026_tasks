@@ -237,5 +237,48 @@ class Program
                 Console.WriteLine("invalid operator ");
                 break;
         }
+        // task11 loan eligibility system 
+        Console.Write("enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+          
+        Console.Write("enter your monthly income : ");
+        double income = double.Parse(Console.ReadLine());
+          
+        Console.Write("do you have an existing loan  : ");
+        string answer  =Console.ReadLine();
+
+        bool hasLoan;
+          
+        if (answer == "yes")
+        {
+            hasLoan = true;
+        }
+        else
+        {
+            hasLoan = false;
+        }
+
+        if (age >= 21 && age <= 60 && income >= 400 && !hasLoan)
+        {
+            Console.WriteLine("you are eligible for the personal loan ");
+        }
+        else
+        {
+            Console.WriteLine("you are not eligible for the personal loan ");
+        }
+
+        if (age < 21 || age > 60)
+        {
+            Console.WriteLine(" age out of range");
+        }
+        else if (income < 400)
+        {
+            Console.WriteLine("income too low ");
+        }
+        else if (hasLoan)
+        {
+            Console.WriteLine("you have an existing  loan ");
+
+        }
     }
 }
