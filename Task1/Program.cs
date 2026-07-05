@@ -12,5 +12,18 @@ class Program
         
         Console.Write("Name :" + name+", Age :"+age+", Height :"+ height+", Student :" +student  );
 
+        
+        // task 2 rectangle calculator 
+        Console.WriteLine("enter the lenght : ");
+        float length = float.Parse(Console.ReadLine());
+        
+        Console.WriteLine("enter the width : ");
+        float width = float.Parse(Console.ReadLine());
+
+        float area = length * width;
+        float perimeter = 2 * (length + width);
+        
+        Console.WriteLine("the area is : " +area);
+        Console.WriteLine("the perimeter is : " +perimeter);
     }
 }
