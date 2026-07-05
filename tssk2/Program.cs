@@ -15,6 +15,19 @@ class Program
             Console.WriteLine(i);
         }
         Console.WriteLine("liftoff ");
+//task2 sum of numbers 1 to n 
+
+        int n;
+        int sum = 0;
+        
+        Console.Write("enter a number :");
+        n = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            sum = sum + i;
+        }
+        Console.WriteLine("the sum is :"+ sum );
 
     }
 }
