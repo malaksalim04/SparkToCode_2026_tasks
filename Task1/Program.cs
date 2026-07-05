@@ -191,5 +191,51 @@ class Program
                 break;
             
         } 
+        
+        //task10 mini calculator
+        Console.Write("enter the first number: ");
+        double number1 = double.Parse(Console.ReadLine());
+          
+        Console.Write("enter the second number: ");
+        double number2 = double.Parse(Console.ReadLine());
+          
+        Console.Write("enter an operator:  ");
+        string op = Console.ReadLine();
+
+        switch (op)
+        {
+            case "+":
+                Console.WriteLine("result:" +(number1 + number2));
+                break;
+            case "-" :
+                Console.WriteLine("result:" +(number1 - number2));
+                break;
+            case "*" :
+                Console.WriteLine("result:" +(number1 * number2));
+                break;
+            case "/" :
+                if (number2 != 0)
+                {
+                    Console.WriteLine("result:" +(number1 / number2));
+                }
+                else
+                {
+                    Console.WriteLine("cannot divide by zero");
+                }
+                break;
+            case "%" :
+                if (number2 != 0)
+                {
+                    Console.WriteLine("result:" +(number1 % number2));
+                }
+                else
+                {
+                    Console.WriteLine("cannot divide by zero");
+                }
+                break;
+            default:
+                Console.WriteLine("invalid operator ");
+                break;
+        }
     }
 }
