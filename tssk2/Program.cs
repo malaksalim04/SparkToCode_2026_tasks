@@ -103,5 +103,45 @@ class Program
         {
             Console.WriteLine("enter a valid number ");
         }
+        
+        // task7 repeating menu with exit option
+
+        int choice = 0;
+        while (choice != 3)
+            
+        {
+            Console.WriteLine("menu");
+            Console.WriteLine("1. say hello");
+            Console.WriteLine("2. show current time-of day ");
+            Console.WriteLine("3.exit");
+            Console.WriteLine("enter your choice : ");
+
+            try
+            {
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("hello");
+                        break;
+                    case 2:
+                        Console.WriteLine("good morning ");
+                        break;
+                    case 3:
+                        Console.WriteLine("exiting program ");
+                        break;
+                    default:
+                        Console.WriteLine("invalid choice ");
+                        break;
+                }
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("pleas enter a valid number ");
+               
+            }
+            
+        }
     }
 }
