@@ -93,5 +93,25 @@ class Program
         {
             Console.Write("Invalid grade");
         }
+        
+        // task6 temperature converter 
+        Console.WriteLine("enter the  temperature in celsius : ");
+        float celsius = float.Parse(Console.ReadLine());
+
+        float fahrenheit = (celsius * 9 / 5) + 32;
+        Console.WriteLine("the temperature is " +fahrenheit);
+
+        if (celsius < 10)
+        {
+            Console.WriteLine("weather is cold ");
+        }
+        else if (celsius <= 30)
+        {
+            Console.WriteLine("weather is mild  ");
+        }
+        else
+        {
+            Console.WriteLine("weather is hot ");
+        }
     }
 }
