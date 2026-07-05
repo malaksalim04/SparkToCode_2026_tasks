@@ -143,5 +143,20 @@ class Program
             }
             
         }
+        //task8 sum of even numbers only 
+        int n;
+        int sum = 0;
+        
+        Console.Write("enter a positive whole number: ");
+        n = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 2 == 0)
+            {
+                sum = sum + i;
+            }
+        }
+        Console.WriteLine("the sum of even numbers is : " + sum );
     }
 }
