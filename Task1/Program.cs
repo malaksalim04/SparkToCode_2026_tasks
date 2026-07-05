@@ -38,5 +38,32 @@ class Program
         {
             Console.Write("the number is odd ");
         }
+        
+        // task4 voting eligibility
+        Console.Write("enter your age : ");
+        int Age = int.Parse(Console.ReadLine());
+        
+        Console.Write("do you have a valid ID ? : ");
+        bool validID = bool.Parse(Console.ReadLine());
+
+        if (validID == "true")
+        {
+            Console.Write("you have a valid ID ");
+            
+        }
+        else
+        {
+            Console.Write("your ID is not valid ");
+        }
+
+        if (Age >= 18)
+        {
+            Console.Write("you are eligible to vote ");
+        }
+        else
+        {
+            Console.Write("you are not eligible to vote");
+            
+        }
     }
 }
