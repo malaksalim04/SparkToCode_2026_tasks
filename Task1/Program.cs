@@ -65,5 +65,33 @@ class Program
             Console.Write("you are not eligible to vote");
             
         }
+        
+        //task5 grade letter lookup 
+        Console.WriteLine("enter your grade: ");
+        string grade = Console.ReadLine();
+        if (grade == "A")
+        {
+            Console.Write("Excellent ");
+        }
+        else if (grade == "B")
+        {
+            Console.Write("Very Good ");
+        }
+        else if (grade == "C")
+        {
+            Console.Write("Good");
+        }
+        else if (grade == "D")
+        {
+            Console.Write("Pass");
+        }
+        else if (grade == "F")
+        {
+            Console.Write("Fail");
+        }
+        else
+        {
+            Console.Write("Invalid grade");
+        }
     }
 }
