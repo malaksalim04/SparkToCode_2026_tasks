@@ -34,5 +34,16 @@ class Program
             Console.WriteLine("- " + task);
         }
 
+        //task3 browsing history stack
+        Stack<string> history = new Stack<string>();
+          //enter 3 website URLs
+          for (int i = 0; i < 3; i++)
+          {
+              Console.Write("enter website URL " + (i + 1) + ": ");
+              history.Push(Console.ReadLine());
+          }
+          //simulate pressing the back button 
+          history.Pop();
+          Console.WriteLine("current page after pressing back : " + history.Peek());
     }
 }
