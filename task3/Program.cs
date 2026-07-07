@@ -55,7 +55,28 @@ class Program
         {
             Console.WriteLine("result: faoil");
         }
+        //task6 password strength checker 
+        Console.Write("enter a password: ");
+        string password = Console.ReadLine();
 
+        if (password.Length >= 8 && !password.ToLower().Contains("password"))
+        {
+            Console.WriteLine("password strength: strong");
+        }
+        else
+        {
+            Console.WriteLine("password strength: weak");
+
+            if (password.Length < 8)
+            {
+                Console.WriteLine("reason: password must be at least 8 characters long");
+            }
+
+            if (password.ToLower().Contains("password"))
+            {
+                Console.WriteLine("reason: password must not contain the word password ");
+            }
+        }
 
 
 
