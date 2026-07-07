@@ -134,6 +134,25 @@ class Program
         Console.WriteLine("always rounded up : " + roundedup);
         Console.WriteLine("always rounded Down: " + roundedDown);
 
+        //task10 word position finder
+        Console.Write("enter a full sentence: ");
+        string sentence = Console.ReadLine();
+        
+        Console.Write("enter a word to search for: ");
+        string word = Console.ReadLine();
+
+        int firstPositon = sentence.IndexOf(word);
+        int lastPosition = sentence.LastIndexOf(word);
+
+        if (firstPositon == -1)
+        {
+            Console.WriteLine("word not found ");
+        }
+        else
+        {
+            Console.WriteLine("first occurrence position: " + firstPositon);
+            Console.WriteLine("last occurrence position: " + lastPosition);
+        }
 
     }
 }
