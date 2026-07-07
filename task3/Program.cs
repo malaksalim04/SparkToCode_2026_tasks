@@ -24,8 +24,17 @@ class Program
         Console.WriteLine("square: " + square);
         Console.WriteLine("square root : " + squareroot);
         
+        //task3 name formatter
+        Console.Write("enter full mame:");
+        string fullname = Console.ReadLine();
+        
+        Console.WriteLine("uppercase: " + fullname.ToUpper());
+        Console.WriteLine("lowercase: " + fullname.ToLower());
+        Console.WriteLine("number of characters: " + fullname.Length);
         
         
+
+
 
 
     }
