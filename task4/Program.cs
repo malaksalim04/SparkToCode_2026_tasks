@@ -116,7 +116,7 @@ class Program
         {
             Console.WriteLine("- " + product);
         }
-//task7 high podium 
+       //task7 high podium 
 
         List<int> scores = new List<int>();
         //enter 5 game scores 
@@ -160,5 +160,45 @@ class Program
         {
             Console.WriteLine(item);
         }
+        
+        //task9 grade analyzer with functions
+        List<int> grades = new List<int>();
+        Console.Write("how many grades do you want to enter? ");
+        int count = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < count; i++)
+        {
+            Console.Write("enter grade " + (i + 1)+ ": ");
+            grades.Add(Convert.ToInt32(Console.ReadLine()));
+        }
+
+        double average = CalculateAverage(grades);
+        int faillingGrade = findFirstFailing(grades);
+        
+        Console.WriteLine("average grade: " + average);
+        if (faillingGrade == 0)
+        {
+            Console.WriteLine("no failing grades found ");
+        }
+        else
+        {
+            Console.WriteLine("first failing grade: " + faillingGrade);
+        }
+    }
+
+    static double CalculateAverage(List<int> grades)
+    {
+        int sum = 0;
+        foreach (int grade in grades)
+        {
+            sum += grade;
+        }
+
+        return (double)sum / grades.Count;
+    }
+
+    static int FindFirstFailing(List<int> grades)
+    {
+        return grades.Find((x => x < 60));
     }
 }
