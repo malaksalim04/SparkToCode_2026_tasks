@@ -45,5 +45,19 @@ class Program
           //simulate pressing the back button 
           history.Pop();
           Console.WriteLine("current page after pressing back : " + history.Peek());
+          
+          
+         //task4 customer service queue
+         Queue<string> customers = new Queue<string>();
+         
+            //enter 3 customer names 
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("enter customer " + (i +1 )+": ");
+                customers.Enqueue(Console.ReadLine());
+            }
+            //serve the first customer
+            string servedCustomer = customers.Dequeue();
+            Console.WriteLine("served Customer: " + servedCustomer);
     }
 }
