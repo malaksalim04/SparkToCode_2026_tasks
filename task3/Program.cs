@@ -32,6 +32,14 @@ class Program
         Console.WriteLine("lowercase: " + fullname.ToLower());
         Console.WriteLine("number of characters: " + fullname.Length);
         
+        //task4 subscription end date 
+        Console.Write("enter the number of days for the free trial: ");
+        int days = int.Parse(Console.ReadLine());
+
+        DateTime today = DateTime.Today;
+        DateTime enddate = today.AddDays(days);
+        
+        Console.WriteLine("trial end date: " + enddate.ToString("yy-MM-dd"));
         
 
 
