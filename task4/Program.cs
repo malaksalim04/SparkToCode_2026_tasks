@@ -59,5 +59,32 @@ class Program
             //serve the first customer
             string servedCustomer = customers.Dequeue();
             Console.WriteLine("served Customer: " + servedCustomer);
+            
+            
+        //task5 array grade range 
+        int[] grades = new int[5];
+        int sum = 0;
+          //input 5 grades
+          for (int i = 0; i < grades.Length; i++)
+          {
+              Console.Write("enter grade " + (i + 1) + ": ");
+              grades[i] = Convert.ToInt32(Console.ReadLine());
+          }
+          //sort the array 
+          Array.Sort(grades);
+          //calculate the sum 
+          for (int i = 0; i < grades.Length; i++)
+          {
+              sum += grades[i];
+          }
+
+          double average = (double)sum / grades.Length;
+          
+          //display results
+          Console.WriteLine("lowest grade: " + grades[0]);
+          Console.WriteLine("highest grade: " + grades[grades.Length - 1]);
+          Console.WriteLine("average grade: " + average);
+
+
     }
 }
