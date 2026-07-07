@@ -79,6 +79,24 @@ class Program
         }
 
 
+        //task7 clean name comparator 
+        Console.Write("enter the first name: ");
+        string name1 = Console.ReadLine();
+        
+        Console.Write("enter the second name: ");
+        string name2 = Console.ReadLine();
+
+        name1 = name1.Trim().ToUpper();
+        name2 = name2.Trim().ToUpper();
+
+        if (name1 == name2)
+        {
+            Console.WriteLine("match");
+        }
+        else
+        {
+            Console.WriteLine("not a match");
+        }
 
     }
 }
