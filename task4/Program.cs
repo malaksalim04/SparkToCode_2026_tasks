@@ -116,6 +116,25 @@ class Program
         {
             Console.WriteLine("- " + product);
         }
+//task7 high podium 
+
+        List<int> scores = new List<int>();
+        //enter 5 game scores 
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write("enter score " + (i + 1) + ": ");
+            scores.Add(Convert.ToInt32(Console.ReadLine()));
+        }
+        //sort in ascending order
+        scores.Sort();
+        //revers to descending order
+        scores.Reverse();
+        //print the 3 scores
+        Console.WriteLine("\nTop 3 Scores:");
+        Console.WriteLine("1st place : " + scores[0]);
+        Console.WriteLine("2nd place :"+ scores[1]);
+        Console.WriteLine("3rd place :"+ scores[2]);
+
 
     }
 }
