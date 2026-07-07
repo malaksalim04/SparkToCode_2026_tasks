@@ -40,7 +40,21 @@ class Program
         DateTime enddate = today.AddDays(days);
         
         Console.WriteLine("trial end date: " + enddate.ToString("yy-MM-dd"));
-        
+        //task5 grade rounding system 
+        Console.Write("enter your exam score: ");
+        double examscore = double.Parse(Console.ReadLine());
+
+        double roundedscore = Math.Round(examscore, 0);
+        Console.WriteLine("rounded score: " + roundedscore);
+
+        if (roundedscore >= 60)
+        {
+            Console.WriteLine("result: pass");
+        }
+        else
+        {
+            Console.WriteLine("result: faoil");
+        }
 
 
 
