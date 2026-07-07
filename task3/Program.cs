@@ -122,5 +122,18 @@ class Program
         {
             Console.WriteLine("invalid date or number entered");
         }
+        //task9 round up / round down explorer
+        Console.Write("enter a decimal number: ");
+        double number = double.Parse(Console.ReadLine());
+
+        double nearest = Math.Round(number);
+        double roundedup = Math.Ceiling(number);
+        double roundedDown = Math.Floor(number);
+        
+        Console.WriteLine("nearest whole number: " + nearest);
+        Console.WriteLine("always rounded up : " + roundedup);
+        Console.WriteLine("always rounded Down: " + roundedDown);
+
+
     }
 }
