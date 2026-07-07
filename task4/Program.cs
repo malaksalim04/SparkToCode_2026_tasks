@@ -84,7 +84,38 @@ class Program
           Console.WriteLine("lowest grade: " + grades[0]);
           Console.WriteLine("highest grade: " + grades[grades.Length - 1]);
           Console.WriteLine("average grade: " + average);
+     //task6 filtered shopping list 
 
+     List<string> shoppingList = new List<string>();
+     string item = "";
+        //add items until the user types "done"
+        while (item.ToLower() != "done")
+        {
+            Console.Write("enter an item (or type 'done' to finish):");
+            item = Console.ReadLine();
+
+            if (item.ToLower() != "done")
+            {
+                shoppingList.Add(item);
+            }
+        }
+        //print the list before removal
+        Console.WriteLine("\nShopping List Before Removal: ");
+        foreach (string produtc in shoppingList)
+        {
+            Console.WriteLine("- " +produtc);
+        }
+        //remove an item 
+        Console.WriteLine("\nEnter an item To Remove: ");
+        string removeItem = Console.ReadLine();
+        shoppingList.Remove(removeItem);
+        
+        //print the list after removal
+        Console.WriteLine("\nShopping List After Removal: ");
+        foreach (string product in shoppingList)
+        {
+            Console.WriteLine("- " + product);
+        }
 
     }
 }
