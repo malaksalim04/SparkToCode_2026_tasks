@@ -98,5 +98,29 @@ class Program
             Console.WriteLine("not a match");
         }
 
+        //task8 membership expiry checker
+        try
+        {
+            Console.Write("enter membership start date (yyyy/mm/dd): ");
+            DateTime startDate = DateTime.Parse(Console.ReadLine());
+
+            Console.Write("enter the number of valid membership days: ");
+            int day = int.Parse(Console.ReadLine());
+
+            DateTime expirydate = startDate.AddDays(day);
+            Console.WriteLine("expiry date: " + expirydate.ToString("yyyy-MM-dd"));
+            if (expirydate >= DateTime.Today)
+            {
+                Console.WriteLine("membership status: active");
+            }
+            else
+            {
+                Console.WriteLine("membership status: expired");
+            }
+        }
+        catch
+        {
+            Console.WriteLine("invalid date or number entered");
+        }
     }
 }
