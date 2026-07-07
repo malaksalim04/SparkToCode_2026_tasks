@@ -154,5 +154,46 @@ class Program
             Console.WriteLine("last occurrence position: " + lastPosition);
         }
 
+        //task11 one time password (OTP) generator 
+        Random random = new Random();
+        int otp = random.Next(1000, 10000);
+        
+        Console.WriteLine("your OTP is : " + otp);
+
+        int attempts = 1;
+        bool verified = false;
+        while (attempts <= 3 && !verified)
+        {
+            try
+            {
+                Console.Write("enter the OTP: ");
+                int userOTP = int.Parse(Console.ReadLine());
+
+                if (userOTP == otp)
+                {
+                    Console.WriteLine("verified");
+                    verified = true;
+                }
+                else
+                {
+                    if (attempts < 3)
+                    {
+                        Console.WriteLine("incorrect OTP try again ");
+                    }
+
+                    attempts++;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("invalid input please enter numbers only ");
+                attempts++;
+            }
+        }
+
+        if (!verified)
+        {
+            Console.WriteLine("verification failed ");
+        }
     }
 }
