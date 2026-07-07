@@ -18,5 +18,21 @@ class Program
         {
             Console.WriteLine(grade);
         }
+        //task2 dynamic to_do list
+        List<string> tasks = new List<string>();
+        //input 5 tasks 
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write("enter task " + (i + 1) + ":");
+            tasks.Add(Console.ReadLine());
+        }
+        //print all tasks
+        Console.WriteLine("\nTo_Do List: ");
+
+        foreach (string task in tasks )
+        {
+            Console.WriteLine("- " + task);
+        }
+
     }
 }
