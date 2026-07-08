@@ -75,5 +75,32 @@ class Program
             displaymenu();
         }
         
+        
+        //task5 even or odd function 
+        //function the checks ifba number is even 
+        static bool iseven(int number)
+        {
+            return number % 2 == 0;
+        }
+
+        static void main5(string[] args)
+        {
+            Console.Write("enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            
+            //call the function 
+            bool result = iseven(number);
+            
+            //use the returned value in an if else statement 
+
+            if (result)
+            {
+                Console.WriteLine("Even ");
+            }
+            else
+            {
+                Console.WriteLine("Odd ");
+            }
+        }
     }
 }
