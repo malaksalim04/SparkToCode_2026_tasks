@@ -20,5 +20,24 @@ class Program
             //call the function 
             PrintWelcome(name);
         }
+        
+        //task2 square number function 
+        //function with one int parameter and an int return value 
+        static int square(int number)
+        {
+            return number * number;
+        }
+
+        static void main2(string[] args)
+        {
+            Console.Write("enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            
+            //call the function and store the returned value 
+            int result = square(number);
+            
+            //print the result in main 
+            Console.WriteLine("the square is ; " + result);
+        }
     }
 }
