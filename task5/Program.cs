@@ -58,5 +58,22 @@ class Program
             //print the result 
             Console.WriteLine("temperature in fahrenheit: " + fahrenheit);
         }
+        //task4 fixed menu display function 
+        //function with no parameters and no return value 
+        static void displaymenu()
+        {
+            Console.WriteLine("----menu-------");
+            Console.WriteLine("1) start");
+            Console.WriteLine("2) help ");
+            Console.WriteLine("3) exit");
+
+        }
+
+        static void main4(string[] args)
+        {
+            //call the function 
+            displaymenu();
+        }
+        
     }
 }
