@@ -39,5 +39,24 @@ class Program
             //print the result in main 
             Console.WriteLine("the square is ; " + result);
         }
+        
+        //task3 celsius to fahrenheit function 
+        //function that converts celsius to fahrenhit 
+        static double celsiusToFahrenheit(double celsius)
+        {
+            return (celsius * 9 / 5) + 32;
+        }
+
+        static void main3(string[] args);
+        {
+            Console.Write("enter the temperature in celsius: ");
+            double celsius = Convert.ToDouble(Console.ReadLine());
+            
+            //call the function 
+            double fahrenheit = celsiusToFahrenheit(celsius);
+            
+            //print the result 
+            Console.WriteLine("temperature in fahrenheit: " + fahrenheit);
+        }
     }
 }
