@@ -102,5 +102,35 @@ class Program
                 Console.WriteLine("Odd ");
             }
         }
+        
+        //task6 rectangle area & perimeter functions 
+        //function to calculate the area
+        static double calculateArea(double length, double width)
+        {
+            return length * width;
+        }
+        //function to calculate the perimeter
+        static double calculatePerimeter(double length, double width)
+        {
+            return 2 * (length + width);
+        }
+
+        static void main6(string[] args)
+        {
+            Console.Write("enter the length: ");
+            double length = Convert.ToDouble(Console.ReadLine());
+            
+            Console.Write("enter the width: ");
+            double width = Convert.ToDouble(Console.ReadLine());
+            
+            //call the function 
+            double area = calculateArea(length, width);
+            double perimeter = calculatePerimeter(length, width);
+            
+            //print the result 
+            Console.WriteLine("area: " + area);
+            Console.WriteLine("perimeter: " + perimeter);
+            
+        }
     }
 }
