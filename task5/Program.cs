@@ -220,5 +220,53 @@ class Program
             Console.WriteLine("multiply(int, int, int): " + result3);
 
         }
+        
+        //task10 overloaded area calculator 
+        //overload for a square
+        static double calculateArea(double side)
+        {
+            return side * side;
+        }
+        //overload for a rectangle
+        static double calculateArea(double length, double width)
+        {
+            return length * width;
+        }
+
+        static void main10(string[] args)
+        {
+            Console.WriteLine("choose a shape: ");
+            Console.WriteLine("1. square");
+            Console.WriteLine("2. rectangle");
+            Console.WriteLine("enter your choice: ");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Console.Write("enter the side of the square: ");
+                double side = Convert.ToDouble(Console.ReadLine());
+
+                double area = calculateArea(side);
+                Console.WriteLine("Area of the square: " + area);
+            }
+            else if (choice == 2)
+            {
+                Console.Write("enter the length of the rectangle: ");
+                double length = Convert.ToDouble(Console.ReadLine());
+                
+                Console.Write("enter the width of the rectangle: ");
+                double width = Convert.ToDouble(Console.ReadLine());
+
+                double area = calculateArea(length, width);
+                Console.WriteLine("area of the rectangle: "+ area);
+                
+            }
+            else
+            {
+                Console.WriteLine("invalid choice ");
+            }
+
+        }
     }
 }
