@@ -170,5 +170,26 @@ class Program
             //print the returned grade
             Console.WriteLine("grade: " +grade);
         }
+        
+        
+        //task8 countdown function 
+        //function that prints a countdown 
+        static void countdown(int start)
+        {
+            for (int i = start; i >= 1; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        static void main8(string[] atgs)
+        {
+            Console.Write("enter the starting number: ");
+            int start = Convert.ToInt32(Console.ReadLine());
+            
+            //call the function 
+            countdown(start);
+        }
+        
     }
 }
