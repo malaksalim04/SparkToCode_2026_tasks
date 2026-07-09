@@ -190,6 +190,35 @@ class Program
             //call the function 
             countdown(start);
         }
-        
+        //task9 overloaded multiply function 
+        //overload 1: two int parameters
+        static int multiply(int a, int b)
+        {
+            return a * b;
+        }
+        //overload 2 : two double parameters 
+        static double multiply(double a, double b)
+        {
+            return a * b;
+        }
+        //overload 3: three int parameters 
+        static int multiply(int a, int b, int c)
+        {
+            return a * b * c;
+        }
+
+        static void main9(string[] args)
+        {
+            //call all three overloaded functions 
+            int result1 = multiply(4, 5);
+            double result2 = multiply(2.5, 3.2);
+            int result3 = multiply(2, 3, 4);
+            
+            //print the results
+            Console.WriteLine("multiply(int, int): " + result1);
+            Console.WriteLine("multiply(double, double): " + result2);
+            Console.WriteLine("multiply(int, int, int): " + result3);
+
+        }
     }
 }
