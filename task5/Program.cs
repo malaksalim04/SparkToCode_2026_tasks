@@ -268,5 +268,102 @@ class Program
             }
 
         }
+        
+        //task11 function-based calculator 
+        //add 
+        static double add(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+        //subtract 
+        static double subtract(double num1, double num2)
+        {
+            return num1 - num2;
+        }
+        //multiply 
+        static double multiplynumbers(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+        //divide 
+        static double divide(double num1, double num2)
+        {
+            try
+            {
+                if (num2 == 0)
+                {
+                    throw new DivideByZeroException();
+                }
+
+                return num1 / num2;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("error: cannot divide by zero.");
+                return 0;
+            }
+        }
+        //display result 
+        static void displayresult(string operation, double result)
+        {
+            Console.WriteLine(operation + "result = " + result);
+        }
+
+        static void main11(string[] args)
+        {
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.WriteLine("\n===== calculator menu ====");
+                Console.WriteLine("1. add ");
+                Console.WriteLine("2. subtract ");
+                Console.WriteLine("3. multiply ");
+                Console.WriteLine("4. divide ");
+                Console.WriteLine("5. exit ");
+                Console.WriteLine("enter your choice: ");
+
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                if (choice == 5)
+                {
+                    exit = true;
+                    Console.WriteLine("goodbye");
+                }
+                else
+                {
+                    Console.Write("enter first number: ");
+                    double num1 = Convert.ToInt32(Console.ReadLine());
+                    
+                    Console.Write("enter second  number: ");
+                    double num2 = Convert.ToInt32(Console.ReadLine());
+
+                    double result = 0;
+                    switch (choice)
+                    {
+                        case 1 :
+                            result = add(num1, num2);
+                            displayresult("addition" ,result);
+                            break;
+                        case 2:
+                            result = subtract(num1, num2);
+                            displayresult("subtraction", result);
+                            break;
+                        case 3:
+                            result = multiply(num1, num2);
+                            displayresult("multiplication", result);
+                            break;
+                        case 4:
+                            result = divide(num1, num2);
+                            displayresult("division", result);
+                            break;
+                        default:
+                            Console.WriteLine("invalid choice.");
+                            break;
+                    }
+                }
+                
+            }
+        }
     }
 }
