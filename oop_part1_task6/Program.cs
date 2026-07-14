@@ -58,7 +58,44 @@ class Program
            {
                Console.WriteLine("Email notification sent ");
            }
+           public class Student
+           {
+               public int Grade;
+               public string name;
+               public string Address;
+               private string email;
+               private int age;
+               
+               //write only property (case 19)
 
+               private string pin;
+
+               public string SecurityPIN
+               {
+                   set
+                   {
+                       pin = value;
+                   }
+               }
+               
+               // static field (case 17)
+               private static int studentCount = 0;
+
+               public Student()
+               {
+                   studentCount++;
+               }
+
+               public static int GetStudentcount()
+               {
+                   return studentCount;
+               }
+
+               public void sendEmail()
+               {
+                   Console.WriteLine("Registration Email Sent ");
+               }
+           }
            
        }
 }
