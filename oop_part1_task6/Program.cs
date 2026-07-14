@@ -95,6 +95,53 @@ class Program
                {
                    Console.WriteLine("Registration Email Sent ");
                }
+               
+               public class Product
+               {
+                   public string ProductName;
+                   public double Price;
+                   public int StockQuantity;
+
+                   public void Sell(int quantity)
+                   {
+                       if (quantity <= StockQuantity)
+                       {
+                           StockQuantity -= quantity;
+                       }
+                       else
+                       {
+                           Console.WriteLine("not enough stock");
+                       }
+
+                       LogTransaction();
+                   }
+
+                   public void Restock(int quantity)
+                   {
+                       StockQuantity += quantity;
+                       LogTransaction();
+                   }
+
+                   public double GetInventoryValue()
+                   {
+                       printdetails();
+                       return Price * StockQuantity;
+                   }
+
+                   private void PrintDetails()
+                   {
+                       Console.WriteLine("===================");
+                       Console.WriteLine("Product : " + ProductName);
+                       Console.WriteLine("price : " + Price);
+                       Console.WriteLine("Stock : " + StockQuantity);
+
+                   }
+
+                   private void LogTransaction()
+                   {
+                       Console.WriteLine("Transaction logged ");
+                   }
+               }
            }
            
        }
