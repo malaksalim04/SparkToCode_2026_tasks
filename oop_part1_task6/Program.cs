@@ -287,8 +287,34 @@ class Program
                    }
                }
                //case 2   Update Student Address
+
+               static void UpdateAddress()
+               {
+                   Console.Write("Chose Student (1 or 2 ) : ");
+                   int choice = int.Parse(Console.ReadLine());
+                   
+                   Console.Write("Enter New Address: ");
+                   string address = Console.ReadLine();
+
+                   if (choice == 1)
+                   {
+                       student1.Address = address;
+                       Console.WriteLine("Address Update Successfully ");
+                       Console.WriteLine("New address: " + student1.Address);
+                   }
+                   else if (choice == 2)
+                   {
+                       student2.Address = address;
+                       Console.WriteLine("Address Updated Successfully ");
+                       Console.WriteLine("New address: " +student2.Address);
+                   }
+                   else
+                   {
+                       Console.WriteLine("invalid Student ");
+                   }
+               }
                
-                
+               
            }
            
        
