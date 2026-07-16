@@ -338,7 +338,30 @@ class Program
                        Console.WriteLine("Invalid account ");
                    }
                    
-                   
+                   //case4  Make a Withdrawal
+                   static void WithdrawMoney()
+                   {
+                       Console.Write("chose Account (1 or 2 ) : ");
+                       int choice = int.Parse(Console.ReadLine());
+                       
+                       Console.Write("enter Withdrawal Amount: ");
+                       double amount = double.Parse(Console.ReadLine());
+
+                       if (choice == 1)
+                       {
+                           account1.Withdraw(amount);
+                           Console.WriteLine("Current Balance = " + account1.Balance);
+                       }
+                       else if (choice == 2)
+                       {
+                           account1.Withdraw(amount);
+                           Console.WriteLine("Current Balance = " + account2.Balance);
+                       }
+                       else
+                       {
+                           Console.WriteLine("Invalid Account ");
+                       }
+                   }
                }
            }
            
