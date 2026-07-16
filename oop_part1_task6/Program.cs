@@ -362,6 +362,29 @@ class Program
                            Console.WriteLine("Invalid Account ");
                        }
                    }
+                   
+                   //case 5 View Product Details
+                   static void ViewProduct()
+                   {
+                       Console.Write("choose product ( 1 or 2): ");
+                       int choice = int.Parse(Console.ReadLine());
+
+                       if (choice == 1)
+                       {
+                           double value = Product1.GetInventoryValue();
+                           Console.WriteLine("Inventory Value = " + value);
+                       }
+                       else if (choice == 2)
+                       {
+                           double value = Product2.GetInventoryValue();
+                           Console.WriteLine("Inventory Value = " + value);
+                       }
+                       else
+                       {
+                           Console.WriteLine("Invalid Product");
+                       }
+                   }
+                   
                }
            }
            
