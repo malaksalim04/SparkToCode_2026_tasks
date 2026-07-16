@@ -314,7 +314,32 @@ class Program
                    }
                }
                
-               
+               // case 3 Make a Deposit
+               static void DepositMoney()
+               {
+                   Console.Write("chose Account (1 or 2 ) : ");
+                   int choice = int.Parse(Console.ReadLine());
+                   
+                   Console.Write("enter Deposit Amount: ");
+                   double amount = double.Parse(Console.ReadLine());
+
+                   if (choice == 1)
+                   {
+                       account1.Deposit(amount);
+                       Console.WriteLine(account1.HolderName + "'s New Balance = " + account1.Balance);
+                   }
+                   else if (choice == 2)
+                   {
+                       account2.Deposit(amount);
+                       Console.WriteLine(account2.HolderName + "'s New Balance = " + account2.Balance);
+                   }
+                   else
+                   {
+                       Console.WriteLine("Invalid account ");
+                   }
+                   
+                   
+               }
            }
            
        
