@@ -384,6 +384,31 @@ class Program
                            Console.WriteLine("Invalid Product");
                        }
                    }
+                   //case 6 Register a Student
+                   static void RegisterStudent()
+                   {
+                       Console.Write("Choose student (1 or 2): ");
+                       int choice = int.Parse(Console.ReadLine());
+                       
+                       Console.Write("Enter Email: ");
+                       string email = Console.ReadLine();
+
+                       if (choice ==1 )
+                       {
+                           student1.Register(email);
+                           Console.WriteLine("student registered successfully");
+                       }
+                       else if (choice == 2)
+                       {
+                           student2.Register(email);
+                           Console.WriteLine("student registered successfully");
+                       }
+                       else
+                       {
+                           Console.WriteLine("Invalid Student ");
+                       }
+                   }
+                   
                    
                }
            }
