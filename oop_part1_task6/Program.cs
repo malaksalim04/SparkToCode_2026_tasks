@@ -1,4 +1,6 @@
-﻿namespace oop_part1_task6;
+﻿using System.ComponentModel.Design;
+
+namespace oop_part1_task6;
 
 class Program
 {
@@ -6,7 +8,7 @@ class Program
     {
     //parr1 create clasess   
     //class BankAccount 
-       public class BankAccount
+      class BankAccount
        {
            public int AccountNumber;
            public string HolderName;
@@ -48,6 +50,12 @@ class Program
 
            public double CheckBalance()
            {
+               PrintInformation();
+               return Balance;
+           }
+
+           private void PrintInformation()
+           {
                Console.WriteLine("---------------------------");
                Console.WriteLine("Account number:  "+ AccountNumber);
                Console.WriteLine("Holder Name:  "+HolderName);
@@ -58,45 +66,51 @@ class Program
            {
                Console.WriteLine("Email notification sent ");
            }
-           public class Student
+
+           class Student
            {
-               public int Grade;
-               public string name;
+               public string Name;
                public string Address;
+               public int Grade;
                private string email;
-               private int age;
-               
+               int age;
+
+               // Total Students Counter [Static Fields & Methods]  case 17 
+               private static int totalStudents = 0;
+
                //write only property (case 19)
 
                private string pin;
 
-               public string SecurityPIN
+               public string PIN
                {
-                   set
-                   {
-                       pin = value;
-                   }
+                   set { pin = value; }
                }
-               
-               // static field (case 17)
-               private static int studentCount = 0;
+
 
                public Student()
                {
-                   studentCount++;
+                   totalStudents++;
                }
 
                public static int GetStudentcount()
                {
-                   return studentCount;
+                   return totalStudents;
                }
 
-               public void sendEmail()
+               public void Register(string Email)
                {
-                   Console.WriteLine("Registration Email Sent ");
+                   email = Email;
+                   sendEmail();
                }
-               
-               public class Product
+
+               private void sendEmail()
+               {
+                   Console.WriteLine("Registration Email sent ");
+               }
+           }
+
+        class Product
                {
                    public string ProductName;
                    public double Price;
@@ -124,10 +138,10 @@ class Program
 
                    public double GetInventoryValue()
                    {
-                       printdetails();
+                       PrintDetails();
                        return Price * StockQuantity;
                    }
-
+                   
                    private void PrintDetails()
                    {
                        Console.WriteLine("===================");
@@ -142,7 +156,140 @@ class Program
                        Console.WriteLine("Transaction logged ");
                    }
                }
+
+               class program
+               {
+                    static BankAccount acccount1 = new BankAccount();
+                    static BankAccount acccount2 = new BankAccount();
+
+                    static Student student1 = new Student();
+                    static Student student2 = new Student();
+
+                    static product product1 = new Product();
+                    static product product2 = new Product();
+
+                    static void Main(string[] args)
+                    {
+                        //Bank Accounts 
+                        acccount1.AccountNumber = 1163;
+                        acccount1.HolderName = "karim";
+                        acccount1.Balance = 120;
+
+                        acccount2.AccountNumber = 15203;
+                        acccount2.HolderName = "Ali";
+                        acccount2.Grade = 70;
+                        
+                        //Students
+                        student1.Name = "Ali";
+                        student1.Address = "Muscat";
+                        student1.Grade = 65;
+                        
+                        student2.Name = "Ahmed";
+                        student2.Address = "Muscat";
+                        student2.Grade = 70;
+                        
+                        
+                        // products 
+                        product1.ProductName = "Wireless Mouse";
+                        product1.Price = 5.500;
+                        product1.StockQuantity = 50;
+                        
+                        product2.ProductName = "Mechanical Keyboard";
+                        product2.Price = 15.750;
+                        product2.StockQuantity = 20;
+
+                        while (true)
+                        {
+                            Console.Clear();
+                            
+                            Console.WriteLine("==========BANK & STUDENT MANAGEMANT ======");
+                            Console.WriteLine("1. View Account Details ");
+                            Console.WriteLine("2. Update Student Address");
+                            Console.WriteLine("3. Deposit ");
+                            Console.WriteLine("4. Withdraw");
+                            Console.WriteLine("5. View Product");
+                            Console.WriteLine("6. Register student ");
+                            Console.WriteLine("7. Compare Accounts ");
+                            Console.WriteLine("8. Restock Product");
+                            Console.WriteLine("9. Transfer Between accounts");
+                            Console.WriteLine("10. Update Student Grade ");
+                            Console.WriteLine("11. Student Report ");
+                            Console.WriteLine("12. Account Status");
+                            Console.WriteLine("13. sell Product ");
+                            Console.WriteLine("14. scholarship Eligibility ");
+                            Console.WriteLine("15. Balance Top-Up ");
+                            Console.WriteLine("16. Quick Account Opening ");
+                            Console.WriteLine("17. Total Students");
+                            Console.WriteLine("18. Overdrawn Check");
+                            Console.WriteLine("19. Set Student PIN");
+                            Console.WriteLine("20. Exit ");
+                            Console.Write("\nChoose: ");
+
+                            int choice;
+                            try
+                            {
+                                choice = int.Parse(Console.ReadLine());
+                            }
+                            catch 
+                            {
+                                Console.WriteLine("Invalid Input");
+                                Console.ReadLine();
+                                continue;
+                            }
+
+                            switch (choice)
+                            {
+                                case 1:
+                                    ViewAccount();
+                                    break;
+                                case 2:
+                                    UpdateAddress();
+                                    break;
+                                case 3:
+                                    DepositMoney();
+                                    break;
+                                case 4:
+                                    WithdrawMoney();
+                                    break;
+                                case 5:
+                                    ViewProduct();
+                                    break;
+                                case 6:
+                                    return;
+                                default:
+                                    Console.WriteLine("coming in the next part ........");
+                                    break;
+                            }
+                            Console.WriteLine("\nPress Enter......");
+                            Console.ReadLine();
+                        }
+                    }
+                    
+               } 
+               //case 1 View Account Details
+
+               static void ViewAccount()
+               {
+                   Console.Write("chose Account (1 or 2 ): ");
+                   int choice = int.Parse(Console.ReadLine());
+
+                   if (choice == 1)
+                   {
+                       account1.CheckBalance();
+                   }
+                   else if (choice == 2 )
+                   {
+                       account2.CheckBalance();
+                   }
+                   else
+                   {
+                       Console.WriteLine("Invalid Account ");
+                   }
+               }
+               //case 2   Update Student Address
+               
+                
            }
            
-       }
+       
 }
