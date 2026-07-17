@@ -466,6 +466,55 @@ class Program
                        }
                        
                        
+                       // case 9 Transfer Between Accounts
+                       static void TransferMoney()
+                       {
+                           Console.WriteLine("Transfer From Account (1 or 2 ): ");
+                           int from = int.Parse(Console.ReadLine());
+                           
+                           Console.WriteLine("Transfer To Account (1 or 2 ): ");
+                           int to = int.Parse(Console.ReadLine());
+
+                           if (from == to)
+                           {
+                               Console.Write("cannot transfer to the same account ");
+                               return;
+                           }
+
+                           BankAccount source = null;
+                           BankAccount destination = null;
+
+                           if (from == 1)
+                               source = account1;
+                           else if (from == 2)
+                               source = account2;
+
+                           if (to == 1)
+                               destination = account1;
+                           else if (to == 2)
+                               destination = account2;
+
+                           if (source == null || destination == null)
+                           {
+                               Console.WriteLine("Invalid account ");
+                               return;
+                           }
+                           Console.Write("Amount: ");
+                           double amount = double.Parse(Console.ReadLine());
+
+                           if (source.Balance >= amount)
+                           {
+                               source.Withdraw(amount);
+                               destination.Deposit(amount);
+                               
+                               Console.WriteLine("Transfer completed ");
+                           }
+                           else
+                           {
+                               Console.WriteLine("Transfer failed not enough balance");
+                           }
+                       }
+                       
                        
                        
                    }
