@@ -6,72 +6,76 @@ class Program
 {
     static void Main(string[] args)
     {
-    //parr1 create clasess   
-    //class BankAccount 
-      class BankAccount
-       {
-           public int AccountNumber;
-           public string HolderName;
-           public double Balance;
-           //parameterized constructor (case 16)
-           public BankAccount(int accountNumber, string holderName, double balance)
-           {
-               AccountNumber = accountNumber;
-               HolderName = holderName;
-               Balance = balance;
-           }
-           //read only property (case18)
-           public bool IsOverdrawn
-           {
-               get
-               {
-                   return Balance < 0;
-               }
-           }
+        //parr1 create clasess   
+        //class BankAccount 
+        class
+        BankAccount
+        {
 
-           public void Deposit(double amount)
-           {
-               Balance += amount;
-               SendEmail();
-           }
+    public int AccountNumber;
+    public string HolderName;
 
-           public void Withdraw(double amount)
-           {
-               if (amount <= Balance)
-               {
-                   Balance -= amount;
-                   SendEmail();
-               }
-               else
-               {
-                   Console.WriteLine("insufficient balance ");
-               }
-           }
+    public double Balance;
 
-           public double CheckBalance()
-           {
-               PrintInformation();
-               return Balance;
-           }
+    //parameterized constructor (case 16)
+    public BankAccount(int accountNumber, string holderName, double balance)
+    {
+        AccountNumber = accountNumber;
+        HolderName = holderName;
+        Balance = balance;
+    }
 
-           private void PrintInformation()
-           {
-               Console.WriteLine("---------------------------");
-               Console.WriteLine("Account number:  "+ AccountNumber);
-               Console.WriteLine("Holder Name:  "+HolderName);
-               Console.WriteLine("Balance : "+ Balance);
-           }
+    //read only property (case18)
+    public bool IsOverdrawn
+    {
+        get { return Balance < 0; }
+    }
 
-           public void SendEmail()
-           {
-               Console.WriteLine("Email notification sent ");
-           }
+    public void Deposit(double amount)
+    {
+        Balance += amount;
+        SendEmail();
+    }
 
-           class Student
+    public void Withdraw(double amount)
+    {
+        if (amount <= Balance)
+        {
+            Balance -= amount;
+            SendEmail();
+        }
+        else
+        {
+            Console.WriteLine("insufficient balance ");
+        }
+    }
+
+    public double CheckBalance()
+    {
+        PrintInformation();
+        return Balance;
+    }
+
+    private void PrintInformation()
+    {
+        Console.WriteLine("---------------------------");
+        Console.WriteLine("Account number:  " + AccountNumber);
+        Console.WriteLine("Holder Name:  " + HolderName);
+        Console.WriteLine("Balance : " + Balance);
+    }
+
+    private void SendEmail()
+    {
+        Console.WriteLine("Email notification sent ");
+    }
+}
+
+class Student
            {
                public string Name;
                public string Address;
                public int Grade;
+               
                private string email;
                int age;
 
@@ -84,7 +88,10 @@ class Program
 
                public string PIN
                {
-                   set { pin = value; }
+                   set
+                   {
+                       pin = value;
+                   }
                }
 
 
@@ -101,10 +108,10 @@ class Program
                public void Register(string Email)
                {
                    email = Email;
-                   sendEmail();
+                   SendEmail();
                }
 
-               private void sendEmail()
+               private void SendEmail()
                {
                    Console.WriteLine("Registration Email sent ");
                }
@@ -255,7 +262,21 @@ class Program
                                     ViewProduct();
                                     break;
                                 case 6:
-                                    return;
+                                    RegisterStudent();
+                                    break;
+                                case 7:
+                                    CompareAccounts();
+                                    break;
+                                case 8:
+                                    RegisterProduct();
+                                    break;
+                                case 9:
+                                    Transfermoney();
+                                    break;
+                                case 10:
+                                    UpdateGrade();
+                                    break;
+                                    
                                 default:
                                     Console.WriteLine("coming in the next part ........");
                                     break;
@@ -265,7 +286,7 @@ class Program
                         }
                     }
                     
-               } 
+                
                //case 1 View Account Details
 
                static void ViewAccount()
@@ -319,7 +340,7 @@ class Program
                {
                    Console.Write("chose Account (1 or 2 ) : ");
                    int choice = int.Parse(Console.ReadLine());
-                   
+
                    Console.Write("enter Deposit Amount: ");
                    double amount = double.Parse(Console.ReadLine());
 
@@ -337,8 +358,9 @@ class Program
                    {
                        Console.WriteLine("Invalid account ");
                    }
-                   
-                   //case4  Make a Withdrawal
+               }
+
+               //case4  Make a Withdrawal
                    static void WithdrawMoney()
                    {
                        Console.Write("chose Account (1 or 2 ) : ");
@@ -437,11 +459,11 @@ class Program
 
                        if (choice == 1)
                        {
-                           selected = Product1;
+                           selected = product1;
                        }
                        else if (choice == 2)
                        {
-                           selected = Product2;
+                           selected = product2;
                        }
                        else
                        {
@@ -515,12 +537,116 @@ class Program
                            }
                        }
                        
+                       //case 10  Update Student Grade (Validated)
+                       static void UpdateGrade()
+                       {
+                           Console.Write("choose student ( 1 or 2): ");
+                           int choice = int.Parse(Console.ReadLine());
+                           
+                           Console.WriteLine("enter new grade: ");
+
+                           try
+                           {
+                               int grade = int.Parse(Console.ReadLine());
+
+                               if (grade < 0 || grade > 100)
+                               {
+                                   Console.WriteLine("Grade must be between 0 and 100");
+                                   return;
+                               }
+                               else if (choice == 1)
+                               {
+                                   student1.Grade = grade;
+                                   Console.WriteLine("Grade Updated");
+                               }
+                               else if (choice == 2)
+                               {
+                                   student2.Grade = grade;
+                                   Console.WriteLine("Grade updated ");
+                               }
+                               else
+                               {
+                                   Console.WriteLine("Invalid Student ");
+                               }
+                           }
+                           catch 
+                           {
+                               Console.WriteLine("Invalid grade ");
+                           }
+                       }
+
+                       static void StudentReport()
+                       {
+                           student selected:
+                           
+                           Console.Write("choose student ( 1 or 2): ");
+                           int choice = int.Parse(Console.ReadLine());
+
+                           if (choice == 1)
+                               selected = student1;
+                           else if (choice == 2)
+                               selected = student2;
+                           else
+                           {
+                               Console.WriteLine("Invalid Student ");
+                               return;
+                           }
+                           Console.WriteLine("\n===== Student Report========");
+                           Console.WriteLine("Name: " + selected.Name);
+                           Console.WriteLine("Address: " + selected.Address);
+                           Console.WriteLine("Grade: " + selected.Grade);
+                           
+                           if(selected.Grade >= 60)
+                               Console.WriteLine("Result: pass");
+                           else
+                           {
+                               Console.WriteLine("Result: Fail");
+                           }
+                           
+                       }
+
+                       static void AccountStatus()
+                       {
+                           BankAccount selected;
+                           
+                           Console.Write("choose Account ( 1 or 2) : ");
+                           int choice = int.Parse(Console.ReadLine());
+
+                           if (choice == 1)
+                           {
+                               selected = acccount1;
+                           }
+                           else if (choice == 2)
+                           {
+                               selected = acccount2;
+                           }
+                           else
+                           {
+                               Console.WriteLine("Invalid account ");
+                               return;
+                           }
+                           
+                           Console.WriteLine("Current Balance = " + selected.Balance);
+
+                           if (selected.Balance < 50)
+                           {
+                               Console.WriteLine("Status: low Balance");
+                           }
+                           else if (selected.Balance <= 1000)
+                           {
+                               Console.WriteLine("Status: Healthy");
+                           }
+                           else
+                           {
+                               Console.WriteLine("Status: Premium");
+                           }
+                       }
+                       
+                       
                        
                        
                    }
                    
                }
            }
-           
-       
 }
