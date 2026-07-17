@@ -642,8 +642,42 @@ class Student
                            }
                        }
                        
-                       
-                       
+                       //Case 13 - Bulk Sale With Revenue Calculation
+                       static void sellProduct()
+                       {
+                           Product selected;
+                           
+                           Console.Write("Choose Product (1 or 2): ");
+                           int choice = int.Parse(Console.ReadLine());
+
+                           if (choice == 1)
+                           {
+                               selected = product1;
+                           }
+                           else if (choice == 2)
+                           {
+                               selected = product2;
+                           }
+                           else
+                           {
+                               Console.WriteLine("Invalid Product");
+                               return;
+                           }
+                           
+                           Console.Write("Quantity to Sell: ");
+                           int quantity = int.Parse(Console.ReadLine());
+
+                           if (selected.StockQuantity < quantity)
+                           {
+                               Console.WriteLine("Need" + (quantity - selected.StockQuantity) + "more items ");
+                           }
+                           else
+                           {
+                               selected.Sell(quantity);
+                               double revenue = quantity * selected.Price;
+                               Console.WriteLine("revenue = " + revenue);
+                           }
+                       }
                        
                    }
                    
