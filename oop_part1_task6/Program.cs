@@ -408,6 +408,23 @@ class Program
                            Console.WriteLine("Invalid Student ");
                        }
                    }
+                   //case 7 Compare Two Account Balances
+                   static void CompareAccounts()
+                   {
+                       if (account1.Balance > account2.Balance)
+                       {
+                           Console.WriteLine(account1.HolderName + "has more money");
+                       }
+                       else if (account2.Balance > account1.Balance)
+                       {
+                           Console.WriteLine(account2.HolderName + "has more money ");
+                       }
+                       else
+                       {
+                           Console.WriteLine("both accounts have the same balance ");
+                       }
+                   }
+                   
                    
                    
                }
