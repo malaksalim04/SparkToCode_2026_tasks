@@ -424,8 +424,51 @@ class Program
                            Console.WriteLine("both accounts have the same balance ");
                        }
                    }
-                   
-                   
+                   //case 8 Restock Product & Stock Level Check
+                   static void RestockProduct()
+                   {
+                       Console.Write("Choose Product (1 or 2): ");
+                       int choice = int.Parse(Console.ReadLine());
+                       
+                       Console.Write("Quantity to Add: ");
+                       int quantity = int.Parse(Console.ReadLine());
+
+                       Product selected = null;
+
+                       if (choice == 1)
+                       {
+                           selected = Product1;
+                       }
+                       else if (choice == 2)
+                       {
+                           selected = Product2;
+                       }
+                       else
+                       {
+                           Console.WriteLine("Invalid product ");
+                           return;
+                       }
+                       
+                       selected.Restock(quantity);
+                       Console.WriteLine("Current Stock = " + selected.StockQuantity);
+
+                       if (selected.StockQuantity < 10)
+                       {
+                           Console.WriteLine("Stock Level : Low ");
+                       }
+                       else if (selected.StockQuantity < 50)
+                       {
+                           Console.WriteLine("Stock Level : Moderate ");
+                       }
+                       else
+                       {
+                           Console.WriteLine("Stock Level: Well Stocked");
+                       }
+                       
+                       
+                       
+                       
+                   }
                    
                }
            }
