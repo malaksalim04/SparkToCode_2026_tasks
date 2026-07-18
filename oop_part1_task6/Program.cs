@@ -475,7 +475,7 @@ class Program
         }
 
         //case 8 Restock Product & Stock Level Check
-        static void RestockProduct()
+        static void RegisterProduct()
         {
             Console.Write("Choose Product (1 or 2): ");
             int choice = int.Parse(Console.ReadLine());
@@ -514,10 +514,11 @@ class Program
             {
                 Console.WriteLine("Stock Level: Well Stocked");
             }
+        }
 
 
-            // case 9 Transfer Between Accounts
-            static void TransferMoney()
+               // case 9 Transfer Between Accounts
+            static void Transfermoney()
             {
                 Console.WriteLine("Transfer From Account (1 or 2 ): ");
                 int from = int.Parse(Console.ReadLine());
@@ -673,7 +674,7 @@ class Program
             }
 
             //Case 13 - Bulk Sale With Revenue Calculation
-            static void sellProduct()
+            static void SellProduct()
             {
                 Product selected;
 
@@ -710,6 +711,8 @@ class Program
             }
 
             //Case 14 - Scholarship Eligibility Check
+            static void Scholarship()
+            {
             Console.Write("choose Student  (1 or 2): ");
             int s = int.Parse(Console.ReadLine());
 
@@ -825,36 +828,36 @@ class Program
             {
                 Console.WriteLine("Account is not overdrawn ");
             }
+        }
+        //Case 19 - Set Student Security PIN [Write-Only Property]
 
-             //Case 19 - Set Student Security PIN [Write-Only Property]
-            static void SetPin()
+        static void SetPin()
+        {
+            Console.Write("choose student (1 or 2): ");
+            int choice = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter 4-digit PIN: ");
+            string pin = Console.ReadLine();
+
+            if (pin.Length != 4)
             {
-                Console.Write("choose student (1 or 2): ");
-                int choice = int.Parse(Console.ReadLine());
+                Console.WriteLine("PIN must be exactly 4 digits ");
+                return;
+            }
 
-                Console.Write("Enter 4-digit PIN: ");
-                string pin = Console.ReadLine();
-
-                if (pin.Length != 4)
-                {
-                    Console.WriteLine("PIN must be exactly 4 digits ");
-                    return;
-                }
-
-                if (choice == 1)
-                {
-                    student1.PIN = pin;
-                    Console.WriteLine("PIN set successfully ");
-                }
-                else if (choice == 2)
-                {
-                    student2.PIN = pin;
-                    Console.WriteLine("PIN set successfully ");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid student  ");
-                }
+            if (choice == 1)
+            {
+                student1.PIN = pin;
+                Console.WriteLine("PIN set successfully ");
+            }
+            else if (choice == 2)
+            {
+                student2.PIN = pin;
+                Console.WriteLine("PIN set successfully ");
+            }
+            else
+            {
+                Console.WriteLine("Invalid student  ");
             }
         }
     }
