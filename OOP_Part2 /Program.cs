@@ -550,7 +550,51 @@ class Program
                     }
                     break;
                 case 12:
-                    Console.WriteLine("case 12 -Remove Unavailable Rooms");
+                    var removebleRooms = rooms
+                        .Where(r => !r.IsAvailable &&
+                                    !guests.Any(g => g.RoomNumber == r.RoomNumber.ToString()))
+                        .OrderBy(r => r.RoomNumber);
+                    if (!removebleRooms.Any())
+                    {
+                        Console.WriteLine("all unavailable rooms are currently occupied ");
+                        break;
+                    }
+                    Console.WriteLine("==== removable rooms ===");
+
+                    foreach (Room room in removebleRooms)
+                    {
+                        Console.WriteLine("--------------");
+                        Console.WriteLine("room number : " + room.RoomNumber);
+                        Console.WriteLine("room type : " + room.RoomType);
+                        Console.WriteLine("price : " + room.PricePerNight.ToString("F2") + "OMR");
+                    }
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("Rooms to remove : " + removebleRooms.Count());
+                    
+                    Console.WriteLine("confrim removal (Y/N):  ");
+                    string confirm = Console.ReadLine().ToUpper();
+
+                    if (confirm == "Y")
+                    {
+                        rooms.RemoveAll(r => !r.IsAvailable &&
+                                             !guests.Any(g => g.RoomNumber == r.RoomNumber.ToString()));
+                        
+                        Console.WriteLine();
+                        Console.WriteLine("rooms remover successfully ");
+                        Console.WriteLine("totsl remaining rooms : " + rooms.Count);
+                        Console.WriteLine();
+                        Console.WriteLine("====REMAINING ROOMS ======");
+
+                        foreach (var room in rooms.Selesct(r => new { r.RoomNumber, r.RoomNumber}))
+                        {
+                            Console.WriteLine(("room " + room.RoomNumber + " - " + room,));
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("removal cancelled");
+                    }
                     break;
                 case 13:
                     Console.WriteLine("case 13 - Extend Guest Stay");
