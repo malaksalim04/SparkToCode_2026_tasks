@@ -131,7 +131,7 @@ class Program
 
                     break;
                 case 3:
-                    Console.WriteLine("enter Guest ID : ");
+                    Console.Write("enter Guest ID : ");
                     string searchGuestID = Console.ReadLine();
 
                     Guest guest = guests.FirstOrDefault(g => g.GuestID == searchGuestID);
@@ -143,14 +143,14 @@ class Program
                     }
                     
                     Console.WriteLine("enter room number : ");
-                    int seaarchRoomNumber;
+                    int searchRoomNumber;
 
-                    while (!int.TryParse(Console.ReadLine(), out seaarchRoomNumber))
+                    while (!int.TryParse(Console.ReadLine(), out searchRoomNumber))
                     {
                         Console.WriteLine("invalid room number try again : ");
                     }
 
-                    Room room = rooms.FirstOrDefault(r => r.RoomNumber == seaarchRoomNumber);
+                    Room room = rooms.FirstOrDefault(r => r.RoomNumber == searchRoomNumber);
 
                     if (room == null)
                     {
@@ -190,28 +190,47 @@ class Program
                     }
 
                     Console.WriteLine();
-                    Console.WriteLine("======= ALL ROOMS ============================")
+                    Console.WriteLine("======= ALL ROOMS ============");
                     Console.WriteLine("Total Rooms: " + rooms.Count());
 
-                    foreach (Room room in rooms.OrderBy(r => r.RoomNumber) )
+                    foreach (Room room in rooms.OrderBy(r => r.RoomNumber))
                     {
-                        Console.WriteLine("=========================")
+                        Console.WriteLine("=========================");
                         Console.WriteLine("Room Number : " + room.RoomNumber);
                         Console.WriteLine("Room Type : " + room.RoomType);
                         Console.WriteLine("Price : " + room.PricePerNight.ToString("F2") + "OMR");
 
                         if (room.IsAvailable)
                         {
-                            Console.WriteLine("Status : Available ")
+                            Console.WriteLine("Status : Available ");
                         }
                         else
                         {
-                            Console.WriteLine("status : Booked")
+                            Console.WriteLine("status : Booked");
                         }
                     }
                     break; 
                 case 5:
-                    Console.WriteLine("case 5 - View All Guests");
+                    if (guests.Count() == 0)
+                    {
+                        Console.WriteLine("no guests have been registered yet ");
+                        break;
+                    }
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("====== ALL GUESTS =======");
+                    Console.WriteLine("Total guests: " + guests.Count());
+
+                    foreach (Guest guest in guests.OrderBy(g => g.GuestName))
+                    {
+                        Console.WriteLine("----------------");
+                        Console.WriteLine("Guest ID : " + guest.GuestID);
+                        Console.WriteLine("Guest Name : " + guest.GuestName);
+                        Console.WriteLine("Room Number : " + guest.RoomNumber);
+                        Console.WriteLine("Check-In Date : " + guest.CheckInDate);
+                        Console.WriteLine("Total Nights : " + guest.TotalNights);
+                    }
+                    
                     break; 
                 case 6:
                     Console.WriteLine("case 6 -Search & Filter Rooms");
