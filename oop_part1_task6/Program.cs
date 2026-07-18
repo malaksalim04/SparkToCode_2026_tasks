@@ -753,7 +753,24 @@ class Student
                           Console.WriteLine("No Top-Up Needed");
                       }
                   }
-                  
+                  //Case 16 - Quick Account Opening [Parameterized Constructor]
+
+                  static void QuickAccount()
+                  {
+                      Console.Write("Enter Account Number: ");
+                      int number = int.Parse(Console.ReadLine());
+                      
+                      Console.Write("Enter Holder Name: ");
+                      string name = Console.ReadLine();
+                      
+                      Console.Write("enter starting Balance : ");
+                      double balance = double.Parse(Console.ReadLine());
+
+                      BankAccount newAccount = new BankAccount(number, name, balance);
+                      
+                      Console.WriteLine("\nNew Account Created ");
+                      newAccount.CheckBalance;
+                  }
                   
                }
            }
