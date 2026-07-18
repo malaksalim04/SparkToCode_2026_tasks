@@ -182,7 +182,33 @@ class Program
 
                     break; 
                 case 4:
-                    Console.WriteLine("case 4 - View All Rooms");
+
+                    if (rooms.Count() == 0)
+                    {
+                        Console.WriteLine("no rooms have been added yet ");
+                        break;
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine("======= ALL ROOMS ============================")
+                    Console.WriteLine("Total Rooms: " + rooms.Count());
+
+                    foreach (Room room in rooms.OrderBy(r => r.RoomNumber) )
+                    {
+                        Console.WriteLine("=========================")
+                        Console.WriteLine("Room Number : " + room.RoomNumber);
+                        Console.WriteLine("Room Type : " + room.RoomType);
+                        Console.WriteLine("Price : " + room.PricePerNight.ToString("F2") + "OMR");
+
+                        if (room.IsAvailable)
+                        {
+                            Console.WriteLine("Status : Available ")
+                        }
+                        else
+                        {
+                            Console.WriteLine("status : Booked")
+                        }
+                    }
                     break; 
                 case 5:
                     Console.WriteLine("case 5 - View All Guests");
