@@ -606,7 +606,7 @@ class Program
 
             static void StudentReport()
             {
-                student selected:
+                Student selected;
 
                 Console.Write("choose student ( 1 or 2): ");
                 int choice = int.Parse(Console.ReadLine());
