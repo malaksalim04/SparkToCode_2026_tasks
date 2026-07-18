@@ -95,7 +95,40 @@ class Program
                     
                     break;
                 case 2:
-                    Console.WriteLine("case 2 - Register New Guest");
+                    Console.WriteLine("enter Guest name : ");
+                    string guestName = Console.ReadLine();
+                    
+                    Console.WriteLine("enter check in date : ");
+                    string checkInDate = Console.ReadLine();
+                    
+                    Console.WriteLine("enter number of nights : ");
+                    int nights;
+
+                    while (!int.TryParse(Console.ReadLine(), out nights) || nights <= 0)
+                    {
+                        Console.WriteLine("Invalid input enter a positive number: ");
+                    }
+
+                    string guestID = "G" + (guests.Count + 1).ToString("D3");
+                    
+                    Guest newGuest = new Guest(
+                        guestID,
+                        guestName,
+                        "Not Assigned",
+                        checkInDate,
+                        nights);
+                    
+                    guests.Add(newGuest);
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("Guest registered successfully");
+                    Console.WriteLine("==================================");
+                    Console.WriteLine("Guest ID: " + newGuest.GuestID);
+                    Console.WriteLine("Guest Name : " + newGuest.GuestName);
+                    Console.WriteLine("Room Number : " + newGuest.RoomNumber);
+                    Console.WriteLine("Check-In Date : " + newGuest.CheckInDate);
+                    Console.WriteLine("Total Nights : " + newGuest.TotalNights);
+
                     break;
                 case 3:
                     Console.WriteLine("case 3 - Book a Room for a Guest");
