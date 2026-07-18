@@ -771,7 +771,13 @@ class Student
                       Console.WriteLine("\nNew Account Created ");
                       newAccount.CheckBalance;
                   }
-                  
+                 // Case 17 - Total Students Counter [Static Fields & Methods]
+
+                 static void StudentCounter()
+                 {
+                     Console.WriteLine("Total Student = " + Student.GetStudentcount());
+                 }
+                 
                }
            }
 }
