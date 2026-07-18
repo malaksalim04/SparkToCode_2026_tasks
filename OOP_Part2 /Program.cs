@@ -430,7 +430,27 @@ class Program
                     Console.WriteLine("new price : " + updateRoom.PricePerNight.ToString("F2" + "OMR"));
                     break;
                 case 9:
-                    Console.WriteLine("case 9 - Guest Lookup by Name");
+                    Console.WriteLine("enter  Guest name or part of name : ");
+                    string searchName = Console.ReadLine();
+
+                    var matchingGuesrs = guests.Where(g => g.GuestName.ToLower().Contains(searchName.ToLower()));
+
+                    if (!matchingGuesrs.Any())
+                    {
+                        Console.WriteLine("no guests matches that name ");
+                        break;
+                    }
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("guests fount : " + matchingGuesrs.Count());
+
+                    foreach (Guest guest in matchingGuesrs)
+                    {
+                        Console.WriteLine("---------------");
+                        Console.WriteLine("guest ID : " + guest.GuestID);
+                        Console.WriteLine("guest name : " + guest.GuestName);
+                        Console.WriteLine("room number : " + guest.RoomNumber);
+                    }
                     break;
                 case 10:
                     Console.WriteLine("case 10 - Room Type Breakdown Report");
