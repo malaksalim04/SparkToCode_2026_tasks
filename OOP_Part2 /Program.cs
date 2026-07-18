@@ -44,4 +44,35 @@ class Room
 class Guest
 {
     //guest
+    public string GuestID;
+    public string GuestName;
+    public string RoomNumber;
+    public string CheckInDate;
+    public int TotalNights;
+    public double PricePerNight;
+
+    public Guest(string guestId, string guestName, string roomNumber, string checkInDate, int totalNights)
+    {
+        GuestID = guestId;
+        GuestName = guestName;
+        RoomNumber = roomNumber;
+        CheckInDate = checkInDate;
+        TotalNights = totalNights;
+        PricePerNight = 0;
+    }
+
+    public void DisplayGuest()
+    {
+        Console.WriteLine("----------------------------");
+        Console.WriteLine("Guest ID: " + GuestID);
+        Console.WriteLine("Guest Name: " + GuestName);
+        Console.WriteLine("Room Number: " + RoomNumber);
+        Console.WriteLine("Check In Date: " + CheckInDate);
+        Console.WriteLine("Total Nights: " + TotalNights);
+    }
+
+    public double CalculateTotalCost()
+    {
+        return PricePerNight * TotalNights;
+    }
 }
