@@ -777,7 +777,38 @@ class Student
                  {
                      Console.WriteLine("Total Student = " + Student.GetStudentcount());
                  }
-                 
+                 //Case 18 - Overdrawn Account Check [Read-Only Property]
+
+                 static void Overdrawn()
+                 {
+                     Console.WriteLine("Choose Account (1 or 2); ");
+                     int choice = int.Parse(Console.ReadLine());
+
+                     BankAccount selected;
+                     
+                     if (choice == 1)
+                     {
+                         selected = acccount1;
+                     }
+                     else if (choice == 2)
+                     {
+                         selected = acccount2;
+                     }
+                     else
+                     {
+                         Console.WriteLine("invalid Account ");
+                         return;
+                     }
+
+                     if (selected.IsOverdrawn)
+                     {
+                         Console.WriteLine("Account is Overdrawn");
+                     }
+                     else
+                     {
+                         Console.WriteLine("Account is not overdrawn ");
+                     }
+                 }
                }
            }
 }
