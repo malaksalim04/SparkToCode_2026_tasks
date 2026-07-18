@@ -131,7 +131,55 @@ class Program
 
                     break;
                 case 3:
-                    Console.WriteLine("case 3 - Book a Room for a Guest");
+                    Console.WriteLine("enter Guest ID : ");
+                    string searchGuestID = Console.ReadLine();
+
+                    Guest guest = guests.FirstOrDefault(g => g.GuestID == searchGuestID);
+
+                    if (guest == null)
+                    {
+                        Console.WriteLine("guest not found ");
+                        break;
+                    }
+                    
+                    Console.WriteLine("enter room number : ");
+                    int seaarchRoomNumber;
+
+                    while (!int.TryParse(Console.ReadLine(), out seaarchRoomNumber))
+                    {
+                        Console.WriteLine("invalid room number try again : ");
+                    }
+
+                    Room room = rooms.FirstOrDefault(r => r.RoomNumber == seaarchRoomNumber);
+
+                    if (room == null)
+                    {
+                        Console.WriteLine("room not found ");
+                        break;
+                    }
+
+                    if (!room.IsAvailable)
+                    {
+                        Console.WriteLine("room is already booked ");
+                        break;
+                    }
+
+                    guest.RoomNumber = room.RoomNumber.ToString();
+                    guest.PricePerNight = room.PricePerNight;
+
+                    room.IsAvailable = false;
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("booking successful ");
+                    Console.WriteLine("===============================");
+                    Console.WriteLine("guest name : " + guest.GuestName);
+                    Console.WriteLine("room number : " + room.RoomNumber);
+                    Console.WriteLine("room type : " + room.RoomType);
+                    Console.WriteLine("price/night : " + room.PricePerNight.ToString("F2"));
+                    Console.WriteLine("Total nights : " + guest.TotalNights);
+                    Console.WriteLine("Total cost : " + guest.CalculateTotalCost().ToString("F2"));
+
+
                     break; 
                 case 4:
                     Console.WriteLine("case 4 - View All Rooms");
