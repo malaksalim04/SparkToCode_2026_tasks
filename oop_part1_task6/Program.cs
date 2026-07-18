@@ -276,6 +276,21 @@ class Student
                                 case 10:
                                     UpdateGrade();
                                     break;
+                                case 11 ;
+                                    StudentReport();
+                                    break;
+                                case 12:
+                                    AccountStatus();
+                                    break;
+                                case 13:
+                                    SellProduct();
+                                    break;
+                                case 14 :
+                                    Scholarship();
+                                    break;
+                                case 15:
+                                    TopUP();
+                                    break;
                                     
                                 default:
                                     Console.WriteLine("coming in the next part ........");
@@ -701,8 +716,45 @@ class Student
                        }
 
                    }
-                   
-                   
+                  // Case 15 - Full Balance Top-Up Flow
+                  static void TopUP()
+                  {
+                      BankAccount selected;
+                      
+                      Console.Write("choose account (1 or 2 ) : ");
+                      int choice = int.Parse(Console.ReadLine());
+
+                      if (choice == 1)
+                      {
+                          selected = acccount1;
+                      }
+                      else if (choice == 2)
+                      {
+                          selected = acccount2;
+                      }
+                      else
+                      {
+                          Console.WriteLine("Invalid account ");
+                          return;
+                      }
+
+                      double before = selected.Balance;
+
+                      if (before < 50)
+                      {
+                          double amount = 100 - before;
+                          selected.Deposit(amount);
+                          
+                          Console.WriteLine("Balance Before = " + before);
+                          Console.WriteLine("Balance after = " + selected.Balance);
+                      }
+                      else
+                      {
+                          Console.WriteLine("No Top-Up Needed");
+                      }
+                  }
+                  
+                  
                }
            }
 }
