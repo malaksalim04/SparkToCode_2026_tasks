@@ -340,10 +340,94 @@ class Program
 
                     break; 
                 case 7:
-                    Console.WriteLine("case 7 - Guest & Booking Statistics");
-                    break; 
+                    Console.WriteLine("------- Guest & Booking Statistics-------");
+                    //total guests 
+                    Console.WriteLine("total Registered Guests : " + guests.Count());
+                    //guests with booking 
+                    Console.WriteLine("Guests with booking : " + guests.Count(g => g.RoomNumber !="Not Assigned"));
+                    //total rooms 
+                    Console.WriteLine("total rooms : " + rooms.Count());
+                    //booked rooms 
+                    Console.WriteLine("booked rooms: " + rooms.Count(r => !r.IsAvailable));
+                    
+                    //check if there are any active bookings 
+                    if (!guests.Any(g => g.RoomNumber != "Not Assigned "))
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("no active booking recorded ");
+                        break;
+                    }
+                    //avrage night 
+                    double averageNights = guests
+                        .Where(g => g.RoomNumber != "Not assigned")
+                        .Average(g => g.TotalNights);
+                    
+                    Console.WriteLine("average nights : " + averageNights.ToString("F2"));
+                    Console.WriteLine("");
+                    Console.WriteLine("======top 3  highest revenue booking =====");
+                    var topGuests = guests
+                        .Where(g => g.RoomNumber != "Not Assigned")
+                        .OrderByDescending(g => g.CalculateTotalCost())
+                        .Take(3);
+
+                    foreach (Guest guest in topGuests)
+                    {
+                        Console.WriteLine("------");
+                        Console.WriteLine("guest name : " + guest.GuestName);
+                        Console.WriteLine("room : " +guest.RoomNumber);
+                        Console.WriteLine("total cost : " + guest.CalculateTotalCost().ToString("F2") + "OMR");
+                        
+                    }
+                    Console.WriteLine("");
+                    Console.WriteLine("-----booking summary --------");
+
+                    var summary  = guests
+                        .Where(g => g.RoomNumber != "Not Assigned")
+                        .Select(g =>
+                            g.GuestName + " - room " + g.RoomNumber + 
+                            " - " + g.TotalNights + "nights - OMR  " +
+                            g.CalculateTotalCost().ToString("F2"));
+
+                    foreach (string item in summary)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    break;
+
+                
                 case 8:
-                    Console.WriteLine("case 8 - Update Room Price");
+                    Console.WriteLine("enter Room number: ");
+                    int roomNumber;
+                    while (!int.TryParse(Console.ReadLine(), out roomNumber) || roomNumber <= 0)
+                    {
+                        Console.WriteLine("invalid room number  enter again : ");
+                    }
+
+                    Room updateRoom = rooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
+
+                    if (updateRoom == null)
+                    {
+                        Console.WriteLine("room not fount ");
+                        break;
+                    }
+
+                    double oldprice = updateRoom.PricePerNight;
+                    
+                    Console.WriteLine("enter new price : ");
+                    double newPrice;
+                    while (!double.TryParse(Console.ReadLine(), out newPrice) || newPrice <= 0)
+                    {
+                        Console.WriteLine("invalid price enter a positive number: ");
+                    }
+
+                    updateRoom.PricePerNight = newPrice;
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("room price update successfully");
+                    Console.WriteLine("-------------------------------");
+                    Console.WriteLine("room roomNumber: " + updateRoom.RoomNumber);
+                    Console.WriteLine("old price : " + oldprice.ToString("F2"));
+                    Console.WriteLine("new price : " + updateRoom.PricePerNight.ToString("F2" + "OMR"));
                     break;
                 case 9:
                     Console.WriteLine("case 9 - Guest Lookup by Name");
