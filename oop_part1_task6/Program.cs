@@ -298,7 +298,6 @@ class Program
                         break;
                     case 19:
                         SetPin();
-
                         break;
 
                     default:
