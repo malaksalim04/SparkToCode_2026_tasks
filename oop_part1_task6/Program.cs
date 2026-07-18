@@ -678,8 +678,30 @@ class Student
                                Console.WriteLine("revenue = " + revenue);
                            }
                        }
+                       //Case 14 - Scholarship Eligibility Check
+                       Console.Write("choose Student  (1 or 2): ");
+                       int s = int.Parse(Console.ReadLine());
                        
+                       Console.Write("choose Account (1 or 2) : ");
+                       int a = int.Parse(Console.ReadLine());
+
+                       Student student = (s == 1) ? student1 : student2;
+                       BankAccount account = (a == 1) ? acccount1 : acccount2;
+
+                       if (student.Grade >= 80 && account.Balance >= 100)
+                       {
+                           Console.WriteLine("Eligible");
+                       }
+                       else
+                       {
+                           Console.WriteLine("Not Eligible ");
+                           
+                           if (student.Grade < 80 )
+                              Console.WriteLine("Grade is too low "); 
+                       }
+
                    }
+                   
                    
                }
            }
