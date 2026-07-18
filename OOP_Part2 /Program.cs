@@ -56,7 +56,43 @@ class Program
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("case 1 - Add New Room");
+                    Console.WriteLine("Enter Room Number: ");
+                    int roomNumber;
+
+                    while (!int.TryParse(Console.ReadLine(), out roomNumber) || roomNumber <= 0)
+                    {
+                        Console.WriteLine("Invalid room Number enter a positive number: ");
+                    }
+
+                    if (rooms.Any(r => r.RoomNumber == roomNumber))
+                    {
+                        Console.WriteLine("a room with this number already exists ");
+                        break;
+                    }
+                    Console.Write("Enter room type (Single/Double/Suite): ");
+                    string roomType = Console.ReadLine();
+                    
+                    Console.Write("enter price per night: ");
+                    double price;
+
+                    while (!double.TryParse(Console.ReadLine(), out price) || price <= 0 )
+                    {
+                        Console.Write("Invalid price enter a positive number : ");
+                    }
+
+                    Room newRoom = new Room(roomNumber, roomType, price, true);
+                    
+                    rooms.Add(newRoom);
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("Room added successfully");
+                    Console.WriteLine("================================= ");
+                    Console.WriteLine("Room Number : " + newRoom.RoomNumber);
+                    Console.WriteLine("Room type : " + newRoom.RoomType);
+                    Console.WriteLine("Price : " + newRoom.PricePerNight.ToString("F2"));
+                    Console.WriteLine("Status : Available ");
+                    Console.WriteLine("total Rooms : " + rooms.Count);
+                    
                     break;
                 case 2:
                     Console.WriteLine("case 2 - Register New Guest");
