@@ -664,7 +664,48 @@ class Program
                     }
                     break;
                 case 15:
-                    Console.WriteLine("case 15 - Guest Pagination Viewer");
+                    if (guests.Count == 0)
+                    {
+                        Console.WriteLine("no guest have been registered yet ");
+                        break;
+                    }
+
+                    int pageSize = 3;
+
+                    int totalPages = (int)Math.Ceiling((double)guests.Count / pageSize);
+                    Console.Write("enter page number : ");
+                    int pageNumber;
+
+                    while (!int.TryParse(Console.ReadLine(), out pageNumber) || pageNumber < = 0)
+                    {
+                        Console.Write("invalid page number enter again : ");
+                    }
+
+                    if (pageNumber > totalPages)
+                    {
+                        Console.WriteLine("that page does not exist ");
+                        break;
+                    }
+
+                    var pageGuests = guests
+                        .Skip((pageNumber - 1) * pageSize)
+                        .Take(pageSize);
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("=======guest page =========");
+                    Console.WriteLine("page " + pageNumber + " of " + totalPages);
+                    Console.WriteLine();
+
+                    foreach (Guest guest in pageGuests)
+                    {
+                        Console.WriteLine("--------------------");
+                        Console.WriteLine("guest id : " + guest.GuestID);
+                        Console.WriteLine("guest name : " + guest.GuestName);
+                        Console.WriteLine("room number : " + guest.RoomNumber);
+                        Console.WriteLine("check-in date : " + guest.CheckInDate);
+                        Console.WriteLine("total nights : " + guest.TotalNights);
+                    }
+                    
                     break;
                 case 0:
                     exit = true;
