@@ -635,7 +635,33 @@ class Program
                     
                     break;
                 case 14:
-                    Console.WriteLine("case 14 - Highest Revenue Booking");
+                    var activeBookings = guests
+                        .Where(g => g.RoomNumber != "Not Assigned ");
+
+                    if (!activeBookings.Any())
+                    {
+                        Console.WriteLine("No active booking recoreded ");
+                        break;
+                    }
+
+                    var highesRevenue = activeBookings
+                        .Select(g => new
+                        {
+                            Name = g.GuestName,
+                            Room = g.RoomNumber,
+                            TotalCost = g.CalculateTotalCost()
+                        })
+                        .OrderByDescending(g => g.TotalCost)
+                        .Take(1);
+                    
+                    Console.WriteLine("============= Highest Revenue Booking ===============");
+
+                    foreach (var booking  in highesRevenue)
+                    {
+                        Console.WriteLine("-----------------------");
+                        Console.WriteLine("guest name : " + booking.Name);
+                        Console.WriteLine("total cost : " + booking.TotalCost.ToString("F2") + "OMR");
+                    }
                     break;
                 case 15:
                     Console.WriteLine("case 15 - Guest Pagination Viewer");
