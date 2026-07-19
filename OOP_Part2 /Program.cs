@@ -597,7 +597,42 @@ class Program
                     }
                     break;
                 case 13:
-                    Console.WriteLine("case 13 - Extend Guest Stay");
+                    Console.WriteLine("enter guest id : ");
+                    string guestID = Console.ReadLine();
+
+                    Guest guest = guests.FirstOrDefault(g => g.GuestID == guestID);
+
+                    if (guest == null)
+                    {
+                        Console.WriteLine("guest not found ");
+                        break;
+                    }
+
+                    if (guest.RoomNumber == "Not Assigned ")
+                    {
+                        Console.WriteLine("this guest has no active booking to extend ");
+                        break;
+                    }
+                    
+                    Console.WriteLine("enter additional nights : ");
+                    int extraNights;
+
+                    while (!int.TryParse(Console.ReadLine(), out extraNights) || extraNights <= 0 )
+                    {
+                       Console.Write("invalid input enter a positive number : "); 
+                    }
+                    
+                    guest.TotalNights += extraNights;
+                    
+                    Console.WriteLine();
+                    Console.WriteLine("guest stay extended successfully ");
+                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine("guest name : " + guest.GuestName);
+                    Console.WriteLine("room number : " + guest.RoomNumber); 
+                    Console.WriteLine("total nights : " + guest.TotalNights);
+                    Console.WriteLine("new total cost : " + guest.CalculateTotalCost().ToString("F2") + "OMR");
+                    
+                    
                     break;
                 case 14:
                     Console.WriteLine("case 14 - Highest Revenue Booking");
