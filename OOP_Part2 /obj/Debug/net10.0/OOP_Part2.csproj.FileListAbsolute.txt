@@ -1,0 +1,15 @@
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /bin/Debug/net10.0/OOP_Part2
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /bin/Debug/net10.0/OOP_Part2.deps.json
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /bin/Debug/net10.0/OOP_Part2.runtimeconfig.json
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /bin/Debug/net10.0/OOP_Part2.dll
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /bin/Debug/net10.0/OOP_Part2.pdb
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.AssemblyInfoInputs.cache
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.AssemblyInfo.cs
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.csproj.CoreCompileInputs.cache
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.sourcelink.json
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.dll
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/refint/OOP_Part2.dll
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.pdb
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/OOP_Part2.genruntimeconfig.cache
+/Users/malak/RiderProjects/SparkToCode_2026_tasks/OOP_Part2 /obj/Debug/net10.0/ref/OOP_Part2.dll
